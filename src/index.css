@@ -1,0 +1,333 @@
+/* dashboard */
+.headerdash {
+  display: flex;
+  list-style-type: none;
+  background-color: black;
+  color: #fff;
+  padding: 10px;
+  justify-content: space-between;
+  border-bottom: white;
+}
+.headerdash .user {
+  position: relative;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  color: black;
+}
+
+.side-bardash {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: #fff;
+  width: 250px;
+  height: 100vh;
+  align-items: center;
+  list-style: none;
+  flex-basis: 20%;
+}
+.side-bardash li {
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+}
+.side-bardash li:hover {
+  background-color: rgb(39, 37, 37);
+}
+li h1 {
+  color: white;
+}
+.bardash {
+  color: white;
+  background-color: black;
+}
+.dashpicCard img {
+  width: 2cm;
+  height: 1cm;
+}
+table {
+  width: 20cm;
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
+.dashpicCard {
+  margin-left: 8cm;
+  margin-top: -6cm;
+  display: flex;
+}
+.dashpic {
+  margin-top: -570px;
+}
+.alldash {
+  display: flex;
+  flex-direction: row;
+}
+.user p {
+  color: white;
+  margin-left: 5px;
+}
+li #user-img {
+  color: white;
+}
+#deleteicon {
+  color: red;
+  cursor: pointer;
+}
+#editicon {
+  cursor: pointer;
+}
+#nwposttitle {
+  margin-left: 4cm;
+}
+/*  =================Small About Qury ============ */
+@media screen AND (max-width: 600px) {
+  .headerdash {
+    display: flex;
+    list-style-type: none;
+    background-color: black;
+    color: #fff;
+    padding: 10px;
+    justify-content: space-between;
+    border-bottom: white;
+  }
+  .dashpic {
+    /* margin-top: -600px; */
+    width: 5px;
+  }
+  .headerdash .user {
+    position: relative;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    color: black;
+  }
+  .side-bardash {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: #fff;
+    width: 250px;
+    height: 100vh;
+    align-items: center;
+    list-style: none;
+    flex-basis: 20%;
+  }
+  .side-bardash li {
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .side-bardash li:hover {
+    background-color: rgb(39, 37, 37);
+  }
+  li h1 {
+    color: white;
+  }
+  .bardash {
+    color: white;
+    background-color: black;
+  }
+  .dashpicCard img {
+    width: 2cm;
+    height: 1cm;
+  }
+  .dashpicCard {
+    margin-left: 110px;
+    margin-top: -259px;
+    display: flex;
+    gap: 10px;
+    width: 2cm;
+  }
+
+  .dashicons {
+    font-size: 20px;
+    margin-left: 15px;
+  }
+  .user p {
+    color: white;
+    margin-left: 5px;
+  }
+  li #user-img {
+    color: white;
+  }
+
+  .modal {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: rgb(243, 18, 18);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal-header {
+    padding: 2px 16px;
+    color: #121929;
+  }
+
+  .modal-body {
+    padding: 2px 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-footer {
+    padding: 2px 16px;
+  }
+  .blog-form-control {
+    display: flex;
+    flex-direction: column;
+    margin: 7px 0;
+  }
+  .blog-form-control input {
+    margin: 5px 0;
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+  }
+  .blog-form-control textarea {
+    padding: 10px;
+    column-span: 10;
+  }
+
+  .cancel {
+    background-color: white;
+    color: #888;
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    width: 100px;
+  }
+  .add {
+    background-color: #121929;
+    color: white;
+    border: 1px solid #121929;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 16px;
+    margin-top: 10px;
+    width: 100px;
+  }
+  table {
+    width: 2cm;
+    background-color: whitesmoke;
+    border-radius: 10px;
+  }
+}
+/*  for the modal */
+.modal {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(243, 18, 18);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  color: #121929;
+}
+
+.modal-body {
+  padding: 2px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+}
+.blog-form-control {
+  display: flex;
+  flex-direction: column;
+  margin: 7px 0;
+}
+.blog-form-control input {
+  margin: 5px 0;
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+}
+.blog-form-control textarea {
+  padding: 10px;
+  column-span: 10;
+}
+
+.cancel {
+  background-color: white;
+  color: #888;
+  border: 1px solid #888;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  width: 100px;
+}
+.add {
+  background-color: #121929;
+  color: white;
+  border: 1px solid #121929;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 16px;
+  margin-top: 10px;
+  width: 100px;
+}

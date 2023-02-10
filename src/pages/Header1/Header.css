@@ -1,0 +1,27 @@
+.bellownav{
+    text-align: center;
+    background-color:  black;
+    padding: 20px 20px;
+    width: 55%;
+    margin-left: 300px;
+    margin-top:1cm;
+    border-radius:20px;
+    color: white;
+}
+/*  =================Small About Qury ============ */
+@media screen AND (max-width: 600px) {
+    .footer2,.footer3,.footer4,.footer1{
+    text-align: center;}
+.bellownav{
+    text-align: center;
+    background-color:  black;
+    padding: 50px 50px;
+    width: 90%;
+    margin-left: 20px;
+    margin-top:1cm;
+    border-radius:20px;
+    font-size: 30px;
+    font-size: 25px;
+}
+
+}

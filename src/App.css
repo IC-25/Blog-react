@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 50vh;
+  margin-left: 31rem;
+  background-color: white;
+  border: 2px solid black;
+  padding: 1.5rem 2.5rem;
+  border-radius: 10px;
+}
+input {
+  background-color: white;
+  border: 2px solid black;
+  height: 1cm;
+  width: 8cm;
+  border-radius: 3px;
+}
+input:focus {
+  border: 1px solid #000;
+}
+button {
+  width: 30%;
+  height: 50px;
+  color: white;
+  background-color: black;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-left: 3cm;
+}
+.logintop {
+  text-align: center;
+  margin-top: 1.5cm;
+}
+.insidepost {
+  margin-left: 10cm;
+  margin-top: 1cm;
+}
+.insidepost img {
+  width: 15cm;
+  height: 7.5cm;
+  border-radius: 10px;
+}
+form p {
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+.comments input {
+  display: block;
+  flex-direction: row;
+  margin-left: 10cm;
+  padding: 10px 10px;
+}
+.commenttop {
+  margin-left: 10cm;
+}
+#commentbuton {
+  width: 6%;
+  height: 50%;
+  padding: 10px 10px;
+  margin-left: 10cm;
+}
+textarea {
+  margin-left: 10cm;
+  height: 5cm;
+  width: 300px;
+  padding: 10px 10px;
+}
+.loginrespons {
+  color: red;
+}
+.errmsg {
+  color: red;
+  text-align: center;
+}
+.offscreen {
+  display: none;
+}
+/*  =================Small About Qury ============ */
+@media screen AND (max-width: 600px) {
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 50vh;
+    margin-left: 1rem;
+    background-color: white;
+    border: 2px solid black;
+    padding: 1.5rem 1.5rem;
+    border-radius: 10px;
+  }
+  input {
+    background-color: white;
+    border: 2px solid black;
+    height: 1cm;
+    width: 8cm;
+    border-radius: 3px;
+  }
+  button {
+    width: 30%;
+    height: 50px;
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 3cm;
+  }
+  .logintop {
+    text-align: center;
+    margin-top: 1.5cm;
+  }
+
+  .insidepost {
+    margin-left: 10px;
+    margin-top: 2cm;
+    text-align: center;
+  }
+  .insidepost img {
+    width: 8cm;
+    height: 4cm;
+    margin-left: -10px;
+    border-radius: 10px;
+  }
+  .comments input {
+    display: block;
+    flex-direction: row;
+    margin-left: 1.3cm;
+  }
+  .commenttop {
+    margin-left: 1.3cm;
+    color: black;
+  }
+  #commentbuton {
+    width: 50%;
+    height: 90%;
+    padding: 1rem 1rem;
+    margin-left: 1.3cm;
+  }
+  textarea {
+    margin-left: 1.3cm;
+    height: 5cm;
+    width: 300px;
+    padding: 10px 10px;
+  }
+}

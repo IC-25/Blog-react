@@ -1,0 +1,41 @@
+/* dashboard
+.headerdash{
+  display: flex;
+  list-style-type: none;
+  background-color: #121929;
+  color: #fff;
+  padding: 10px;
+  justify-content: space-between;
+  border-bottom: 2px solid #1e2a44;
+}
+.headerdash .user{
+  position: relative;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  
+}
+.container{
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+.side-bardash{
+  display: flex;
+  flex-direction: column;
+  background-color: #121929;
+  color: #fff;
+  width: 250px;
+  height: 100vh;
+  align-items: center;
+  list-style: none;
+}
+.side-bardash li{
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+}
+.side-bardash li:hover{
+  background-color: #1e2a44;
+  
+} */

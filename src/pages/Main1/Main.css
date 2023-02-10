@@ -1,0 +1,152 @@
+#blog {
+  display: flex;
+  gap: 1cm;
+  margin-top: 2cm;
+  font-size: 12px;
+  text-align: center;
+}
+
+.Maintitle {
+  text-align: center;
+  margin-top: 1cm;
+}
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2rem;
+  place-items: center;
+  width: 100%;
+}
+.portfolioCard img {
+  width: 10cm;
+  height: 5cm;
+  border-radius: 10px;
+  margin-left: 0.6cm;
+}
+#blog2 {
+  display: flex;
+  gap: 1cm;
+  font-size: 20px;
+}
+.portfolio2 {
+  display: flex;
+  gap: 1cm;
+  margin-left: 2.2cm;
+}
+.portfolioCard2 img {
+  width: 10cm;
+  height: 5cm;
+}
+.portfolio li {
+  list-style: none;
+  margin-top: 10px;
+  color: white;
+  height: 30px;
+  padding: 5px 5px;
+  width: 100px;
+  text-align: center;
+  border-radius: 20px;
+  text-decoration: none;
+  width: 30%;
+  height: 50px;
+  padding: 1rem 1rem;
+  margin-left: 3.5cm;
+}
+/* li a:hover{
+    background-color:rgb(169, 169, 226);
+    border-radius:20px;
+} */
+.footer {
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin-top: 15px;
+}
+#footer {
+  display: flex;
+  flex-direction: colum;
+  margin-top: 1cm;
+  background-color: black;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  height: 4cm;
+}
+.view {
+  text-decoration: none;
+  background-color: black;
+}
+#footerinput {
+  width: 10rem;
+  width: 30%;
+  height: 2rem;
+  padding: 0px 5px;
+}
+#footerbutton {
+  color: black;
+  background-color: white;
+  width: 20%;
+  height: 2rem;
+  margin-left: 1rem;
+}
+/* h1{
+    margin-left: 2cm;
+} */
+/*  =================Small About Qury ============ */
+@media screen AND (max-width: 600px) {
+  .Maintitle {
+    font-size: 30px;
+    margin-left: 0cm;
+  }
+  .portfolio {
+    display: flex;
+    gap: 1cm;
+    margin-left: 2.2cm;
+    flex-direction: column;
+    /* width: 15cm;
+    height: 40%; */
+  }
+  .portfolioCard img {
+    width: 9cm;
+    height: 4.5cm;
+    margin-left: -65px;
+    border-radius: 10px;
+  }
+  .portfolioCard h3 {
+    font-size: 20px;
+    text-align: center;
+    margin-left: -5rem;
+  }
+  .portfolioCard li {
+    font-size: 20px;
+    margin-left: 4rem;
+  }
+  #footer {
+    background-color: black;
+    height: 14cm;
+    width: 10.5cm;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer {
+    margin-top: 1.5cm;
+  }
+  .footerlogo {
+    text-align: center;
+  }
+  .portfolio li {
+    list-style: none;
+    margin-top: 10px;
+    color: white;
+    height: 30px;
+    padding: 5px 5px;
+    width: 100px;
+    text-align: center;
+    border-radius: 20px;
+    text-decoration: none;
+    width: 30%;
+    height: 50px;
+    padding: 1rem 1rem;
+  }
+}
