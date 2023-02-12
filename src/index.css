@@ -7,6 +7,8 @@
   padding: 10px;
   justify-content: space-between;
   border-bottom: white;
+  position: fixed;
+  width: 100%;
 }
 .headerdash .user {
   position: relative;
@@ -26,6 +28,8 @@
   align-items: center;
   list-style: none;
   flex-basis: 20%;
+  position: fixed;
+  margin-top: 68px;
 }
 .side-bardash li {
   cursor: pointer;
@@ -53,8 +57,8 @@ table {
   border-radius: 10px;
 }
 .dashpicCard {
-  margin-left: 8cm;
-  margin-top: -6cm;
+  margin-left: 270px;
+  margin-top: 580px;
   display: flex;
 }
 .dashpic {
@@ -79,7 +83,11 @@ li #user-img {
   cursor: pointer;
 }
 #nwposttitle {
-  margin-left: 4cm;
+  margin-left: 7cm;
+  margin-top: 100px;
+}
+#myblogdash {
+  font-size: 25px;
 }
 /*  =================Small About Qury ============ */
 @media screen AND (max-width: 600px) {
@@ -246,7 +254,7 @@ li #user-img {
   }
 }
 /*  for the modal */
-.modal {
+#modalform {
   position: absolute;
   z-index: 1;
   left: 0;
@@ -256,6 +264,8 @@ li #user-img {
   /* overflow: hidden; */
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
+  margin-left: -80px;
+  margin-top: -40px;
 }
 
 .modal-content {

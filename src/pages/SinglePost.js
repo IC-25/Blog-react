@@ -1,5 +1,6 @@
 
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
   const SinglePost = ({blogs}) => {
     const { blogId } = useParams();
@@ -40,7 +41,13 @@ import { useParams } from "react-router-dom";
 
         <section id="footer">
           <div class="container footer">
-            <h1 className="footerlogo">MYBLOG</h1>
+            <Link
+              to="/"
+              style={{ color: "inherit", textDecoration: "inherit" }}
+            >
+              {" "}
+              <h1>MY BLOG</h1>{" "}
+            </Link>
           </div>
           <div class="container footer">
             <p>

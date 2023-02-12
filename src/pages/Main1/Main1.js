@@ -43,7 +43,10 @@ const Main1 = ({blogs}) => {
 
       <section id="footer">
         <div class="container footer">
-          <h1 className="footerlogo">MYBLOG</h1>
+          <Link to="/" style={{ color: "inherit", textDecoration: "inherit" }}>
+            {" "}
+            <h1>MY BLOG</h1>{" "}
+          </Link>
         </div>
         <div class="container footer">
           <p>
@@ -56,9 +59,14 @@ const Main1 = ({blogs}) => {
         <div class="container footer">
           <p>
             <b> NOT QUITE READY FOR BLOG</b> <br></br>
-            Join our online blog no-code community for free.No spam.Ever <br></br>
-            <input id="footerinput" type="Email" placeholder="Enter your Email" />   
-            <button id="footerbutton" >Subscribe</button>  <br></br>
+            Join our online blog no-code community for free.No spam.Ever{" "}
+            <br></br>
+            <input
+              id="footerinput"
+              type="Email"
+              placeholder="Enter your Email"
+            />
+            <button id="footerbutton">Subscribe</button> <br></br>
           </p>
         </div>
       </section>

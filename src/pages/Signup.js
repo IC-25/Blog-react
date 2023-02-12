@@ -9,20 +9,19 @@ function Signup() {
   const [success, setSuccess] = useState(false);
   const [errMsg, setErrMsg] = useState("");
 
-  const handleRegister = async (e) =>{
+  const handleRegister = async (e) => {
     e.preventDefault();
     console.log(name, email, password);
-    try{
-       await axios.post("https://blogapi-wm30.onrender.com/api/v1/signup", 
-      JSON.stringify({name, email, password}),
-      {
-        headers:{ "Content-Type": "application/json"
+    try {
+      await axios.post(
+        "https://blogapi-wm30.onrender.com/api/v1/signup",
+        JSON.stringify({ name, email, password }),
+        {
+          headers: { "Content-Type": "application/json" },
         }
-      }
       );
       setSuccess(true);
-
-    } catch(err){
+    } catch (err) {
       console.error(err.response);
       if (!err?.response) {
         setErrMsg("No Server Response");
@@ -32,8 +31,7 @@ function Signup() {
         setErrMsg("Registration Failed");
       }
     }
-
-  }
+  };
   return (
     <>
       {success ? (
@@ -75,7 +73,13 @@ function Signup() {
 
           <section id="footer">
             <div class="container footer">
-              <h1 className="footerlogo">MYBLOG</h1>
+              <Link
+                to="/"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                {" "}
+                <h1>MY BLOG</h1>{" "}
+              </Link>
             </div>
             <div class="container footer">
               <p>
@@ -105,4 +109,4 @@ function Signup() {
   );
 }
 
-export default Signup
+export default Signup;

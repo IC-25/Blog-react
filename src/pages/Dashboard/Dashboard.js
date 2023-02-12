@@ -4,15 +4,17 @@ import { FaRegEdit } from "react-icons/fa";
 import { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import { Link } from "react-router-dom";
 const Dashboard = ({ blogs }) => {
   const [showModal, setShowModal] = useState(false);
 
+  const { register, handleSubmit, reset } = useForm({});
   const handleShowModal = () => {
     setShowModal(true);
   };
-  const deleteBlog = () => {
-    console.log("delete");
-  };
+  
 
   const editBlog = () => {
     console.log("edit");
@@ -20,6 +22,47 @@ const Dashboard = ({ blogs }) => {
   const handleCloseModal = () => {
     setShowModal(false);
   };
+
+  const onSubmit = async (data) => {
+    console.log(data);
+    const formData = new FormData();
+    formData.append("title", data.title);
+    formData.append("description", data.description);
+    formData.append("image", data.image[0]);
+
+    try {
+      await axios.post(
+        "https://blogapi-wm30.onrender.com/api/v1/blog",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      reset();
+      alert("Successfully");
+    } catch (err) {
+      console.error(err.response);
+    }
+  };
+
+  const handleDelete = async (id) =>{
+    try {
+      await axios({
+        method: "DELETE",
+        url: `https://blogapi-wm30.onrender.com/api/v1/blog/${id}`,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      window.location.reload(true);
+    } catch (error) {
+      console.log(error.response);
+    }
+  } 
+
   return (
     <>
       <div className="containerdash">
@@ -37,12 +80,27 @@ const Dashboard = ({ blogs }) => {
             <li className="bardash" onClick={handleShowModal}>
               New post
             </li>
+            <li>
+              <Link
+                to="/"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                {" "}
+                <h1 id="myblogdash" >MY BLOG</h1>{" "}
+              </Link>
+            </li>
           </ul>
           <h1 id="nwposttitle">BLOG MANAGEMENT SYSTEM</h1>
         </div>
+
+        {/* Start of new blog */}
+
         <div className="new-blog">
           {showModal && (
-            <div className="modal">
+            // dashoboardmodal
+            // <form onSubmit={handleSubmit(onSubmit)}></form>
+
+            <form id="modalform" onSubmit={handleSubmit(onSubmit)}>
               <div className="modal-content">
                 <span className="close" onClick={handleCloseModal}>
                   &times;
@@ -54,16 +112,12 @@ const Dashboard = ({ blogs }) => {
                 <div className="modal-body">
                   <div className="blog-form-control">
                     <label>Choose Image</label>
-                    <input type="file" />
+                    <input type="file" name="image" {...register("image")} />
                   </div>
                   <div className="blog-form-control">
                     <label>Blog Title</label>
-                    <input type="text" />
+                    <input type="text" name="title" {...register("title")} />
                   </div>
-                  {/* <div className="blog-form-control">
-                    <label>blog description</label>
-                    <input type="text" />
-                  </div> */}
                   <div className="blog-form-control">
                     <label>Blog Description</label>
                     {/* <textarea ty pe="text" colspan="10" /> */}
@@ -77,9 +131,14 @@ const Dashboard = ({ blogs }) => {
                   </button>
                 </div>
               </div>
-            </div>
+            </form>
+
+            // end of modal
           )}
         </div>
+
+        {/* end of new blog */}
+
         <div class="dashpic">
           <div>
             <div class="dashpicCard">
@@ -118,7 +177,12 @@ const Dashboard = ({ blogs }) => {
                       </td>
                       <td>
                         {" "}
-                        <FaTrashAlt id="deleteicon" onClick={deleteBlog} />
+                        <FaTrashAlt
+                          id="deleteicon"
+                          onClick={() => {
+                            handleDelete(blog._id);
+                          }}
+                        />
                       </td>
                     </tr>
                   );

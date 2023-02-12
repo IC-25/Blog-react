@@ -33,7 +33,9 @@ const Login = () => {
       );
       console.log(JSON.stringify(Response?.data));
       //console.log(JSON.stringify(Response));
-      const accessToken = response?.data?.accessToken;
+      const accessToken = response?.data?.token;
+      localStorage.setItem("token", accessToken);
+      console.log(accessToken);
       setAuth({ email, password, accessToken });
       setEmail("");
       setPassword("");
@@ -101,7 +103,13 @@ const Login = () => {
 
           <section id="footer">
             <div class="container footer">
-              <h1 className="footerlogo">MYBLOG</h1>
+              <Link
+                to="/"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                {" "}
+                <h1>MY BLOG</h1>{" "}
+              </Link>
             </div>
             <div class="container footer">
               <p>
