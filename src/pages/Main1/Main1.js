@@ -25,22 +25,6 @@ const Main1 = ({blogs}) => {
         </div>
       </section>
 
-      {/* <section id="blog">
-        <div class="container portfolio">
-          {blogs.map((blog, index) => {
-            return (
-              <div class="portfolioCard">
-                <img src={blog.img} className="allow" alt="hjghjkjhgggjhkjgh" />
-                <h3>{blog.title}</h3>
-                <Link className="view" to={`${blog.id}`}>
-                  <li className="view">View more</li>
-                </Link>
-              </div>
-            );
-          })}
-        </div>
-      </section> */}
-
       <section id="footer">
         <div class="container footer">
           <Link to="/" style={{ color: "inherit", textDecoration: "inherit" }}>

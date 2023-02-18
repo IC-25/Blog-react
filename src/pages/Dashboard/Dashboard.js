@@ -8,17 +8,16 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { Link } from "react-router-dom";
 const Dashboard = ({ blogs }) => {
+  const [modal, setModal] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  const { register, handleSubmit, reset } = useForm({});
+  const { register, handleSubmit, reset } = useForm({
+    defaultValues: {},
+  });
   const handleShowModal = () => {
     setShowModal(true);
   };
-  
 
-  const editBlog = () => {
-    console.log("edit");
-  };
   const handleCloseModal = () => {
     setShowModal(false);
   };
@@ -48,7 +47,7 @@ const Dashboard = ({ blogs }) => {
     }
   };
 
-  const handleDelete = async (id) =>{
+  const handleDelete = async (id) => {
     try {
       await axios({
         method: "DELETE",
@@ -61,7 +60,7 @@ const Dashboard = ({ blogs }) => {
     } catch (error) {
       console.log(error.response);
     }
-  } 
+  };
 
   return (
     <>
@@ -76,9 +75,15 @@ const Dashboard = ({ blogs }) => {
         </ul>
         <div className="alldash">
           <ul className="side-bardash">
-            <li className="bardash">Manage</li>
+            <li className="bardash">
+              <Link to="/chart">HOME</Link>
+            </li>
+            <li className="bardash">
+              <Link to="/dashboard">Manage</Link>
+            </li>
+
             <li className="bardash" onClick={handleShowModal}>
-              New post
+              NEW POST
             </li>
             <li>
               <Link
@@ -86,11 +91,48 @@ const Dashboard = ({ blogs }) => {
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 {" "}
-                <h1 id="myblogdash" >MY BLOG</h1>{" "}
+                <h1 id="myblogdash">LOGOUT</h1>{" "}
               </Link>
             </li>
           </ul>
-          <h1 id="nwposttitle">BLOG MANAGEMENT SYSTEM</h1>
+          {/* <h1 id="nwposttitle">BLOG MANAGEMENT SYSTEM</h1> */}
+        </div>
+
+        <div style={{ display: !modal ? "none" : "flex" }}>
+          <form id="modalform" onSubmit={handleSubmit(onSubmit)}>
+            <div className="modal-content">
+              <span className="close" onClick={handleCloseModal}>
+                &times;
+              </span>
+              <div className="modal-header">
+                <h2>Update The Blog</h2>
+              </div>
+
+              <div className="modal-body">
+                <div className="blog-form-control">
+                  <label>Choose Image</label>
+                  <input type="file" name="image" {...register("image")} />
+                </div>
+                <div className="blog-form-control">
+                  <label>Blog Title</label>
+                  <input type="text" name="title" {...register("title")} />
+                </div>
+                <div className="blog-form-control">
+                  <label>Blog Description</label>
+                  {/* <textarea ty pe="text" colspan="10" /> */}
+                </div>
+              </div>
+              <div className="modal-footer">
+                <ReactQuill />
+                <button className="add">Add</button>
+                <button className="cancel" onClick={() => setModal(false)}>
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </form>
+
+          {/* // end of modal */}
         </div>
 
         {/* Start of new blog */}
@@ -173,7 +215,12 @@ const Dashboard = ({ blogs }) => {
                       </td>
                       <td>
                         {" "}
-                        <FaRegEdit id="editicon" onClick={editBlog} />
+                        <Link to={`/edit/${blog._id}`}>
+                          <FaRegEdit
+                            id="editicon"
+                            // onClick={() => setModal(true)}
+                          />
+                        </Link>
                       </td>
                       <td>
                         {" "}

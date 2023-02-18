@@ -76,7 +76,11 @@ textarea {
   padding: 10px 10px;
 }
 .loginrespons {
-  color: red;
+  text-align: center;
+  text-decoration: none;
+}
+.signuprespons {
+  text-align: center;
 }
 .errmsg {
   color: red;
@@ -84,6 +88,9 @@ textarea {
 }
 .offscreen {
   display: none;
+}
+#successalert {
+  text-align: center;
 }
 /*  =================Small About Qury ============ */
 @media screen AND (max-width: 600px) {

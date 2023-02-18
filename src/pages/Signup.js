@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 
 function Signup() {
   const [name, setName] = useState("");
@@ -8,6 +9,7 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
   const [errMsg, setErrMsg] = useState("");
+  const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -21,6 +23,7 @@ function Signup() {
         }
       );
       setSuccess(true);
+      navigate("/Login");
     } catch (err) {
       console.error(err.response);
       if (!err?.response) {
@@ -35,7 +38,7 @@ function Signup() {
   return (
     <>
       {success ? (
-        <section>
+        <section className="signuprespons" >
           <h1>Success!</h1>
           <p>
             <Link to="/login">Log in</Link>

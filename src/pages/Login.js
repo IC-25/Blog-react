@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useRef, useState, useEffect, useContext } from "react";
 import AuthContext from "../components/context/AuthProvider";
 import axios from "axios";
@@ -20,6 +20,7 @@ const Login = () => {
   useEffect(() => {
     setErrMsg("");
   }, [email, password]);
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -41,6 +42,7 @@ const Login = () => {
       setPassword("");
       setSuccess(true);
       console.log(email, password);
+      navigate("/Chart");
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");
@@ -60,7 +62,7 @@ const Login = () => {
         <section className="loginrespons">
           <h1>success!</h1>
           <p>
-            <Link to="/dashboard">Go to Home</Link>
+            <Link to="/Chart">Go to Home</Link>
           </p>
         </section>
       ) : (
