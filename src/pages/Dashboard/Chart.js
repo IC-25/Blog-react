@@ -10,6 +10,10 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { BarChart, Bar,XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { AreaChart, Area,  } from 'recharts';
+import { FaFileMedical } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
+import { FaCog } from "react-icons/fa";
+import { FaFileExport } from "react-icons/fa";
 import {
   ComposedChart,
   Line,
@@ -182,15 +186,20 @@ export default function Charts() {
         <div className="alldash">
           <ul className="side-bardash">
             <li className="bardash">
-              <Link to="/chart">HOME</Link>
-
+              <Link to="/chart">
+                {" "}
+                <FaHome id="homeicon" /> HOME
+              </Link>
             </li>
             <li className="bardash">
-              <Link to="/dashboard">Manage</Link>
+              <Link to="/dashboard">
+                {" "}
+                <FaCog id="manageicon" /> Manage
+              </Link>
             </li>
 
             <li className="bardash" onClick={handleShowModal}>
-              NEW POST
+              <FaFileMedical id="Newposticon" /> NEW POST
             </li>
             <li>
               <Link
@@ -198,7 +207,10 @@ export default function Charts() {
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 {" "}
-                <h1 id="myblogdash">LOGOUT</h1>{" "}
+                <h1 id="myblogdash">
+                  {" "}
+                  <FaFileExport id="logouticon" /> LOGOUT
+                </h1>{" "}
               </Link>
             </li>
           </ul>
@@ -208,24 +220,6 @@ export default function Charts() {
             {/* <Bar data={userData} /> */}
           </div>
           <div className="chart2">
-            {/* <BarChart
-              width={500}
-              height={300}
-              data={data}
-              margin={{
-                top: 20,
-                right: 30,
-                left: 20,
-                bottom: 5,
-              }}
-            >
-              
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Bar dataKey="pv" stackId="a" fill="#8884d8" />
-              <Bar dataKey="amt" stackId="a" fill="#82ca9d" />
-              <Bar dataKey="uv" fill="#ffc658" />
-            </BarChart> */}
             <BarChart
               width={300}
               height={250}
@@ -416,13 +410,6 @@ export default function Charts() {
         </div>
 
         {/* end of new blog */}
-
-        <div classNam="dashpic c">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div className="chart"></div>
-        </div>
       </div>
     </>
   );

@@ -23,7 +23,9 @@ const App = () => {
 
   //fetch blogs
   const fetchBlogs = async () => {
-    const res = await fetch("https://blogapi-wm30.onrender.com/api/v1/blog");
+    const res = await fetch(
+      "https://blogapi-production-87cd.up.railway.app/api/v1/blog"
+    );
     const data = await res.json();
     return data.blogs;
   };

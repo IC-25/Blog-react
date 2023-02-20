@@ -3,7 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useRef, useState, useEffect, useContext } from "react";
 import AuthContext from "../components/context/AuthProvider";
 import axios from "axios";
-const LOGIN_URL = "https://blogapi-wm30.onrender.com/api/v1/signin";
+const LOGIN_URL =
+  "https://blogapi-production-87cd.up.railway.app/api/v1/signin";
 const Login = () => {
   const { setAuth } = useContext(AuthContext);
   const errRef = useRef();

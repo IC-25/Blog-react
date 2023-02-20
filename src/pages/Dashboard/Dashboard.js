@@ -7,6 +7,10 @@ import "react-quill/dist/quill.snow.css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { FaFileMedical } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
+import { FaCog } from "react-icons/fa";
+import { FaFileExport } from "react-icons/fa";
 const Dashboard = ({ blogs }) => {
   const [modal, setModal] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -31,7 +35,7 @@ const Dashboard = ({ blogs }) => {
 
     try {
       await axios.post(
-        "https://blogapi-wm30.onrender.com/api/v1/blog",
+        "https://blogapi-production-87cd.up.railway.app/api/v1/blog",
         formData,
         {
           headers: {
@@ -51,7 +55,7 @@ const Dashboard = ({ blogs }) => {
     try {
       await axios({
         method: "DELETE",
-        url: `https://blogapi-wm30.onrender.com/api/v1/blog/${id}`,
+        url: `https://blogapi-production-87cd.up.railway.app/api/v1/blog/${id}`,
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -76,14 +80,20 @@ const Dashboard = ({ blogs }) => {
         <div className="alldash">
           <ul className="side-bardash">
             <li className="bardash">
-              <Link to="/chart">HOME</Link>
+              <Link to="/chart">
+                {" "}
+                <FaHome id="homeicon" /> HOME
+              </Link>
             </li>
             <li className="bardash">
-              <Link to="/dashboard">Manage</Link>
+              <Link to="/dashboard">
+                {" "}
+                <FaCog id="manageicon" /> Manage
+              </Link>
             </li>
 
             <li className="bardash" onClick={handleShowModal}>
-              NEW POST
+             <FaFileMedical id="Newposticon" /> NEW POST
             </li>
             <li>
               <Link
@@ -91,7 +101,10 @@ const Dashboard = ({ blogs }) => {
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 {" "}
-                <h1 id="myblogdash">LOGOUT</h1>{" "}
+                <h1 id="myblogdash">
+                  {" "}
+                  <FaFileExport id="logouticon" /> LOGOUT
+                </h1>{" "}
               </Link>
             </li>
           </ul>
@@ -188,15 +201,15 @@ const Dashboard = ({ blogs }) => {
                 <tr>
                   <td>
                     {" "}
-                    <b>Image</b>
+                    <b>IMAGE</b>
                   </td>
                   <td>
                     {" "}
-                    <b> Description</b>
+                    <b> DESCRIPTION</b>
                   </td>
                   <td colSpan="2">
                     {" "}
-                    <b>Action</b>
+                    <b>ACTION</b>
                   </td>
                 </tr>
                 {blogs.map((blog, index) => {

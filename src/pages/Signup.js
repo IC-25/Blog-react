@@ -16,7 +16,7 @@ function Signup() {
     console.log(name, email, password);
     try {
       await axios.post(
-        "https://blogapi-wm30.onrender.com/api/v1/signup",
+        "https://blogapi-production-87cd.up.railway.app/api/v1/signup",
         JSON.stringify({ name, email, password }),
         {
           headers: { "Content-Type": "application/json" },

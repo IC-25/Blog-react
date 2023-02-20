@@ -42,7 +42,7 @@ const Edit = ({ blogs }) => {
 
     try {
       await axios.patch(
-        `https://blogapi-wm30.onrender.com/api/v1/blog/${selected._id}`,
+        `https://blogapi-production-87cd.up.railway.app/api/v1/blog/${selected._id}`,
         formData,
         {
           headers: {
@@ -98,7 +98,7 @@ const Edit = ({ blogs }) => {
             <form id="modalform" onSubmit={handleSubmit(onSubmit)}>
               <div className="modal-content">
                 <div className="modal-header">
-                  <h2>Edit a new blog</h2>
+                  <h4>Edit a new blog</h4>
                 </div>
 
                 <div className="modal-body">

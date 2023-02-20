@@ -1,58 +1,40 @@
 /* dashboard */
 .headerdash {
   display: flex;
-  list-style-type: none;
   background-color: black;
   color: #fff;
   padding: 10px;
   justify-content: space-between;
-  border-bottom: white;
   position: fixed;
   width: 100%;
 }
 .headerdash .user {
-  position: relative;
   margin: 10px;
   display: flex;
-  flex-direction: row;
-  color: black;
 }
 
 .side-bardash {
-  display: flex;
-  flex-direction: column;
   background-color: black;
   color: #fff;
-  width: 250px;
+  /* width: 250px; */
   height: 100vh;
-  align-items: center;
-  list-style: none;
-  flex-basis: 20%;
   position: fixed;
   margin-top: 68px;
 }
 .side-bardash li {
   cursor: pointer;
   width: 100%;
-  text-align: center;
-  padding: 20px 0;
+  padding: 20px 20px;
   text-align: center;
 }
 .side-bardash li:hover {
   background-color: rgb(39, 37, 37);
-  text-align: center;
 }
-li h1 {
-  color: white;
-}
-.bardash {
-  color: white;
-  background-color: black;
-  text-align: center;
-}
-.side-bardash{
-  display: flex;
-}
+
+/* .bardash{
+  align-items: center;
+} */
+
 .dashpicCard img {
   width: 2cm;
   height: 1cm;
@@ -87,6 +69,7 @@ li #user-img {
 }
 #editicon {
   cursor: pointer;
+  color: #121929;
 }
 #nwposttitle {
   margin-left: 7cm;
@@ -374,3 +357,13 @@ li #user-img {
   border: black 2px solid;
   border-radius: 10px;
 }
+#Newposticon{
+  color: white;
+}
+#homeicon{
+  color: white;
+}
+#manageicon{
+  color: white;
+}
+#logouticon{color: white;}
